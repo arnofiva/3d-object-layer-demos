@@ -1,8 +1,18 @@
-# ArcGIS API for JavaScript template
+# 3D Object Layer Demos - ArcGIS Maps SDK for JavaScript
+
+Available demos
+
+- [Editor widget](https://arnofiva.github.io/3d-object-layer-demos/)
+- [Custom editing widget](https://arnofiva.github.io/3d-object-layer-demos/custom.html)
+- [Debug view with feature table](https://arnofiva.github.io/3d-object-layer-demos/debug.html)
+
+Contact me for access, source code for all sample can be found in [`src`](./src/) folder.
+
+![Screenshot](./public/thumbnail.png)
 
 ## Prerequisites
 
-* Node.js 16.0+
+- Node.js 16.0+
 
 ## Run project locally
 
@@ -36,7 +46,7 @@ If you only copied the `main` branch, follow these steps to create an orphan `gh
 ```
 rm -rf dist
 git checkout --orphan gh-pages
-git rm -rf . 
+git rm -rf .
 git commit --allow-empty -m "Init empty branch"
 git push origin gh-pages
 ```
