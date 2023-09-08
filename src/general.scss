@@ -14,9 +14,43 @@ body {
   flex-grow: 1;
 }
 
-#loader {
+#panels {
+  width: 200px;
+  height: 300px;
+}
+
+#msg {
   position: absolute;
+  z-index: 1000;
+  bottom: 0px;
+  left: 0px;
   width: 100%;
-  height: 100%;
-  padding: 0;
+  height: 2em;
+  line-height: 2em;
+  padding: 0px 10px;
+  background-color: black;
+  color: white;
+  transition: opacity 1s;
+}
+
+#block__drop-msg,
+#block__load-msg {
+  font-size: 10px;
+  padding: 6px;
+  margin: 10px 0px;
+  background-color: #f0f0f0;
+  width: 200px;
+}
+
+#apply-edits-button {
+  margin-top: 10px;
+}
+
+#tableDiv {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 32px;
+  height: 200px;
+  width: initial;
 }

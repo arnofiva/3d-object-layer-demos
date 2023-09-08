@@ -6,7 +6,7 @@
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <title>3D Object Layer & Editor Widget - ArcGIS Maps SDK for JavaScript</title>
+    <title>3D Object Layer & Custom Upload - ArcGIS Maps SDK for JavaScript</title>
 
     <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="https://www.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-dark-32.png"/>
     <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="https://www.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-32.png"/>
@@ -16,6 +16,17 @@
   <body>
     <div id="viewDiv">
     </div>
-    <script type="module" src="/src/index.ts"></script>
+
+    <calcite-block id="block" collapsible open heading="Upload model">
+      <div id="block__drop-msg">Drop a file into the view to place the model at desired location.</div>
+      <div id="block__load-msg">Alternatively select a file and it will be placed in the center of the view.</div>
+      <calcite-button icon-start="files" width="full" id="upload-model-button">
+        Open file
+      </calcite-button>
+    </calcite-block>
+    
+    <div id="msg"></div>
+
+    <script type="module" src="/src/custom.ts"></script>
   </body>
 </html>

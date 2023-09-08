@@ -1,52 +1,72 @@
-import Color from "@arcgis/core/Color";
-import { whenOnce } from "@arcgis/core/core/reactiveUtils";
+import Map from "@arcgis/core/Map";
+import { SpatialReference } from "@arcgis/core/geometry";
+import IdentityManager from "@arcgis/core/identity/IdentityManager";
+import OAuthInfo from "@arcgis/core/identity/OAuthInfo";
+import SceneLayer from "@arcgis/core/layers/SceneLayer";
 import SceneView from "@arcgis/core/views/SceneView";
-import WebScene from "@arcgis/core/WebScene";
 import "@esri/calcite-components/dist/calcite/calcite.css";
-import "@esri/calcite-components/dist/components/calcite-loader";
 
 // setAssetPath("https://js.arcgis.com/calcite-components/1.0.0-beta.77/assets");
 
 // const params = new URLSearchParams(document.location.search.slice(1));
 // const someParam = params.has("someParam");
 
-// IdentityManager.registerOAuthInfos([
-//   new OAuthInfo({
-//     appId: "",
-//     popup: true,
-//     popupCallbackUrl: `${document.location.origin}${document.location.pathname}oauth-callback-api.html`,
-//   }),
-// ]);
+const pathname = document.location.pathname;
+const directory = pathname.substring(0, pathname.lastIndexOf('/'));
+const popupCallbackUrl = `${document.location.origin}${directory}/oauth-callback-api.html`;
 
-// (window as any).setOAuthResponseHash = (responseHash: string) => {
-//   IdentityManager.setOAuthResponseHash(responseHash);
-// };
+IdentityManager.registerOAuthInfos([
+  new OAuthInfo({
+    appId: "KojZjH6glligLidj",
+    popup: true,
+    popupCallbackUrl,
+  }),
+]);
 
-const map = new WebScene({
-  portalItem: {
-    id: "91b46c2b162c48dba264b2190e1dbcff",
-  },
+(window as any).setOAuthResponseHash = (responseHash: string) => {
+  IdentityManager.setOAuthResponseHash(responseHash);
+};
+
+const defaultUrl =
+  "https://services2.arcgis.com/cFEFS0EWrhfDeVw9/arcgis/rest/services/SO__3857__CH_Zurich__Buildings_InnerCity/SceneServer";
+
+const params = new URLSearchParams(window.location.search);
+
+export const sceneLayer = new SceneLayer({
+  outFields: ["*"],
+  title: "Sample 3D Object Layer",
+  url: params.get("url") || defaultUrl
 });
 
-const view = new SceneView({
+export const map = new Map({
+  basemap: "topo-vector",
+  ground: "world-elevation",
+  layers: [
+    sceneLayer
+  ]
+});
+
+export const view = new SceneView({
+  spatialReference: SpatialReference.WebMercator,
+  viewingMode: "local",
   container: "viewDiv",
   map,
   qualityProfile: "high",
-});
-
-map.when().then(() => {
-  map.ground.surfaceColor = new Color([220, 220, 220]);
-});
-
-map.loadAll().then(() => {
-  const slides = map.presentation.slides;
-  const slide = slides.getItemAt(Math.floor(Math.random() * slides.length));
-  slide.applyTo(view, { animate: false });
-});
-
-whenOnce(() => !view.updating).then(() => {
-  const loader = document.getElementById("loader");
-  loader?.parentElement?.removeChild(loader);
+  camera: {
+    position: {
+      spatialReference: SpatialReference.WebMercator,
+      x: 950536.3463579026,
+      y: 6002448.1828584075,
+      z: 2058.876304641366
+    },
+    heading: 8.074740948860455,
+    tilt: 34.11767720840555
+  },
+  environment: {
+    lighting: {
+      directShadowsEnabled: true
+    }
+  }
 });
 
 (window as any)["view"] = view;
