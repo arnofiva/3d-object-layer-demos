@@ -1,12 +1,12 @@
-# 3D Object Layer Demos - ArcGIS Maps SDK for JavaScript
+# 3D Object Layer Demos
 
-Available demos
+Available demos using the [ArcGIS Maps SDK for JavaScript](https://js.arcgis.com/):
 
 - [Editor widget](https://arnofiva.github.io/3d-object-layer-demos/)
 - [Custom editing widget](https://arnofiva.github.io/3d-object-layer-demos/custom.html)
 - [Debug view with feature table](https://arnofiva.github.io/3d-object-layer-demos/debug.html)
 
-Contact me for access, source code for all sample can be found in [`src`](./src/) folder.
+Contact me for access (ArcGIS Online account required). Source code for all sample can be found in [`src`](./src/) folder.
 
 ![Screenshot](./public/thumbnail.png)
 
