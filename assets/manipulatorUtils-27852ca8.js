@@ -1,0 +1,1 @@
+import{cv as l}from"./index-cdda5707.js";function m(e,o=l(e)){return o.mode!=="on-the-ground"&&!(e.geometry==null||!e.geometry.hasZ)}function a(e,o){let r=null;const t=e.events.on("grab-changed",n=>{r!=null&&(r.remove(),r=null),n.action==="start"&&(r=e.disableDisplay()),o&&o(n)});return{remove(){r?.remove(),t.remove()}}}export{m as n,a as o};

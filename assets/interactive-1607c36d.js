@@ -1,0 +1,5 @@
+/*!
+ * All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+ * See https://github.com/Esri/calcite-components/blob/master/LICENSE.md for details.
+ * v1.4.2
+ */function u(){const{disabled:e}=this;e||HTMLElement.prototype.click.call(this)}function r(e){e.preventDefault()}const a=["mousedown","mouseup","click"];function n(e){const{disabled:t}=e.target;t&&(e.stopImmediatePropagation(),e.preventDefault())}const i={capture:!0};function s(e,t=!1){if(e.disabled){e.el.setAttribute("tabindex","-1"),e.el.setAttribute("aria-disabled","true"),e.el.contains(document.activeElement)&&document.activeElement.blur(),e.el.click=u,e.el.addEventListener("pointerdown",r,i),a.forEach(l=>e.el.addEventListener(l,n,i));return}e.el.click=HTMLElement.prototype.click,e.el.removeEventListener("pointerdown",r,i),a.forEach(l=>e.el.removeEventListener(l,n,i)),typeof t=="function"?e.el.setAttribute("tabindex",t.call(e)?"0":"-1"):t===!0?e.el.setAttribute("tabindex","0"):t===!1&&e.el.removeAttribute("tabindex"),e.el.removeAttribute("aria-disabled")}export{s as u};
