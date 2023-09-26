@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>3D Object Layer & Custom Upload - ArcGIS Maps SDK for JavaScript</title>
+
+    <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32" href="https://www.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-dark-32.png"/>
+    <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32" href="https://www.esri.com/content/dam/esrisites/en-us/common/favicon/esri-favicon-light-32.png"/>
+  
+    
+    <script type="module" crossorigin src="./assets/custom-a83a06a0.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/main-79e5ed80.js">
+    <link rel="modulepreload" crossorigin href="./assets/MeshGeoreferencedRelativeVertexSpace-4cbafb45.js">
+    <link rel="modulepreload" crossorigin href="./assets/MeshLocalVertexSpace-0353b8cf.js">
+    <link rel="modulepreload" crossorigin href="./assets/MeshTransform-d557c89a.js">
+    <link rel="modulepreload" crossorigin href="./assets/georeference-ab089445.js">
+    <link rel="modulepreload" crossorigin href="./assets/External-2117cdfc.js">
+    <link rel="modulepreload" crossorigin href="./assets/Mesh-d3af21f3.js">
+    <link rel="modulepreload" crossorigin href="./assets/GraphicsLayer-6532b5a8.js">
+    <link rel="modulepreload" crossorigin href="./assets/elevationInfoUtils-287337e4.js">
+    <link rel="modulepreload" crossorigin href="./assets/geodesicUtils-04ddd9a4.js">
+    <link rel="modulepreload" crossorigin href="./assets/geometry2dUtils-9d16f4f8.js">
+    <link rel="modulepreload" crossorigin href="./assets/viewUtils-ca2c33e3.js">
+    <link rel="modulepreload" crossorigin href="./assets/SnappingManager-e561e372.js">
+    <link rel="modulepreload" crossorigin href="./assets/SketchViewModel-0c15215b.js">
+    <link rel="modulepreload" crossorigin href="./assets/observers-7949b362.js">
+    <link rel="modulepreload" crossorigin href="./assets/conditionalSlot-7211d13e.js">
+    <link rel="modulepreload" crossorigin href="./assets/guid-4f97587b.js">
+    <link rel="modulepreload" crossorigin href="./assets/interactive-1607c36d.js">
+    <link rel="modulepreload" crossorigin href="./assets/key-89f6acdc.js">
+    <link rel="modulepreload" crossorigin href="./assets/t9n-460cb030.js">
+    <link rel="modulepreload" crossorigin href="./assets/focusTrapComponent-2107ee6f.js">
+    <link rel="modulepreload" crossorigin href="./assets/loadable-7d140904.js">
+    <link rel="modulepreload" crossorigin href="./assets/icon-3b706e0b.js">
+    <link rel="modulepreload" crossorigin href="./assets/loader-142f20e1.js">
+    <link rel="modulepreload" crossorigin href="./assets/action-9e20b9c8.js">
+    <link rel="modulepreload" crossorigin href="./assets/debounce-c198f28b.js">
+    <link rel="modulepreload" crossorigin href="./assets/openCloseComponent-2d424455.js">
+    <link rel="modulepreload" crossorigin href="./assets/FloatingArrow-52fee7c7.js">
+    <link rel="modulepreload" crossorigin href="./assets/popover-a38f0fbf.js">
+    <link rel="modulepreload" crossorigin href="./assets/action-menu-adc47a20.js">
+    <link rel="modulepreload" crossorigin href="./assets/scrim-13194b98.js">
+    <link rel="modulepreload" crossorigin href="./assets/calcite-block-28b862d1.js">
+    <link rel="modulepreload" crossorigin href="./assets/form-9c9dba1f.js">
+    <link rel="modulepreload" crossorigin href="./assets/label2-890d1a34.js">
+    <link rel="modulepreload" crossorigin href="./assets/button-a95c5efa.js">
+    <link rel="stylesheet" href="./assets/main-7772480e.css">
+  </head>
+  <body>
+    <div id="viewDiv">
+    </div>
+
+    <calcite-block id="block" collapsible open heading="Upload model">
+      <div id="block__drop-msg">Drop a file into the view to place the model at desired location.</div>
+      <div id="block__load-msg">Alternatively select a file and it will be placed in the center of the view.</div>
+      <calcite-button icon-start="files" width="full" id="upload-model-button">
+        Open file
+      </calcite-button>
+    </calcite-block>
+    
+    <div id="msg"></div>
+
+    
+  </body>
+</html>

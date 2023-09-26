@@ -1,1 +1,0 @@
-import{dh as c,di as e,bt as f}from"./index-cdda5707.js";import{m}from"./query-2f8589ea.js";async function b(a,t,r){const n=await u(a,t,r);return c.fromJSON(n)}async function u(a,t,r){const n=e(a),s={...r},o=f.from(t),{data:i}=await m(n,o,o.sourceSpatialReference,s);return i}export{u as a,b as s};
